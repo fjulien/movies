@@ -1,12 +1,5 @@
-<div class="row" >
-  <div class="col-4" *ngFor="let event of ticketMasterFeature.selectEvents()">
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" [src]="event.images[0].url" alt="Image of event">
-      <div class="card-body">
-        <h5 class="card-title">{{event.name}}</h5>
-        <p class="card-text">{{event.dates.start.localDate}} {{event.dates.start.localTime}}</p>
-        <a [href]="event.url" target="_blank" class="btn btn-primary">Lien vers ticket master</a>
-      </div>
-    </div>
+<div class="row">
+  <div class="col-4 " *ngFor="let event of ticketMasterFeature.selectEvents()">
+    <app-card [event]="event"></app-card>
   </div>
 </div>

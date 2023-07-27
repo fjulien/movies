@@ -1,0 +1,8 @@
+<div class="card">
+  <img *ngIf="!!event.images && event.images[0]" class="card-img-top" [src]="event.images[0].url" alt="Image of event">
+  <div class="card-body">
+    <h5 class="card-title">{{event.name}}</h5>
+    <p class="card-text">{{event.dates.start.localDate}} {{event.dates.start.localTime}}</p>
+    <a [href]="event.url" target="_blank" class="btn btn-primary">Lien vers ticket master</a>
+  </div>
+</div>
