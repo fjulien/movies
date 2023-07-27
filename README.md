@@ -33,3 +33,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - Standalone -> https://angular.io/guide/standalone-components
 - template-driven-form -> https://angular.io/guide/forms#building-a-template-driven-form
 - Signal -> https://angular.io/guide/signals
+- bootstrap -> https://getbootstrap.com/
+- ngrx -> https://ngrx.io/
+
+## Tools
+- Generateur de type venant d'un json https://jvilk.com/MakeTypes/

@@ -4,10 +4,13 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { TicketMasterService } from './services/ticket-master.service';
 import { HttpClientModule } from '@angular/common/http';
+import { provideStore } from '@ngrx/store';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
-    {provide:TicketMasterService,useClass:TicketMasterService},
-    importProvidersFrom(HttpClientModule) ]
+    { provide: TicketMasterService, useClass: TicketMasterService },
+    importProvidersFrom(HttpClientModule),
+    provideStore()
+]
 };
