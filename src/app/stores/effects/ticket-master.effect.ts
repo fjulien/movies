@@ -5,14 +5,12 @@ import { TicketMasterService } from "src/app/services/ticket-master.service";
 import { ticketMasterActions } from "../actions/ticket-master.action";
 
 export const ticketMasterEffect = createEffect((actions$ = inject(Actions)) => {
+  const ticketMasterService = inject(TicketMasterService)
   return actions$.pipe(
     ofType(ticketMasterActions.getEvents),
     switchMap(() => {
-      return inject(TicketMasterService).search().pipe(
-        map((events) => {
-          console.log(events)
-          return ticketMasterActions.setEvents({events})
-        }),
+      return ticketMasterService.search().pipe(
+        map(({ _embedded }) => ticketMasterActions.setEvents({ events: _embedded.events })),
         catchError((error) => {
           alert(error);
           return of()
@@ -21,4 +19,4 @@ export const ticketMasterEffect = createEffect((actions$ = inject(Actions)) => {
     })
   )
 },
-{ functional: true })
+  { functional: true })

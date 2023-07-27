@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgFor } from '@angular/common';
 import { TicketMasterService } from 'src/app/services/ticket-master.service';
 import { ticketMasterFeature } from 'src/app/stores/selectors/ticket-master.selector';
 

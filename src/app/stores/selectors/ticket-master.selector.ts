@@ -8,7 +8,8 @@ export function ticketMasterFeature() {
 
   return {
     getEvents: () => store.dispatch(ticketMasterActions.getEvents()),
-    removeTodo: (events: any[]) => store.dispatch(ticketMasterActions.setEvents({ events })),
+    setEvents: (events: any[]) => store.dispatch(ticketMasterActions.setEvents({ events })),
     completedTodos: store.selectSignal(ticketMasterReducer.selectsElectEventsLength),
+    selectEvents: store.selectSignal(ticketMasterReducer.selectEvents),
   };
 }
