@@ -10,6 +10,7 @@ export const ticketMasterEffect = createEffect((actions$ = inject(Actions)) => {
     switchMap(() => {
       return inject(TicketMasterService).search().pipe(
         map((events) => {
+          console.log(events)
           return ticketMasterActions.setEvents({events})
         }),
         catchError((error) => {
@@ -19,4 +20,5 @@ export const ticketMasterEffect = createEffect((actions$ = inject(Actions)) => {
       )
     })
   )
-})
+},
+{ functional: true })

@@ -1,4 +1,4 @@
-import { createFeature, createReducer } from "@ngrx/store";
+import { createFeature, createReducer, createSelector, on } from "@ngrx/store";
 import { ticketMasterActions } from "../actions/ticket-master.action";
 
 interface TicketMasterReducer {
@@ -10,12 +10,16 @@ const initialState: TicketMasterReducer = {
 }
 
 export const ticketMasterReducer = createFeature({
-  name : 'Ticket master'
+  name : 'Ticket master',
   reducer: createReducer(
     initialState,
     on(ticketMasterActions.setEvents, (state, action)=>({
       ...state,
       events : action.events,
-    }))
-  )
+    })),
+  
+  ),
+  extraSelectors: ({ selectEvents }) => ({
+    selectsElectEventsLength: createSelector(selectEvents, (events) => events.length),
+  }),
 })

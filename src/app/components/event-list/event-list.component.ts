@@ -1,6 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TicketMasterService } from 'src/app/services/ticket-master.service';
+import { ticketMasterFeature } from 'src/app/stores/selectors/ticket-master.selector';
 
 @Component({
   selector: 'app-event-list',
@@ -10,9 +11,10 @@ import { TicketMasterService } from 'src/app/services/ticket-master.service';
   styleUrls: ['./event-list.component.scss']
 })
 export class EventListComponent implements OnInit {
-  private readonly ticketMasterService:TicketMasterService = inject( TicketMasterService);
+
+  ticketMasterFeature = ticketMasterFeature()
 
   ngOnInit(): void {
-    this.ticketMasterService.search().subscribe(e=>console.log(e))
+    this.ticketMasterFeature.getEvents();
   }
 }
