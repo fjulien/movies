@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
-  ticketMaster : {
-    url : 'https://app.ticketmaster.com/discovery/v2/',
-    apiKey: '',
+  theMovie : {
+    url : 'https://api.themoviedb.org/3',
+    bearer : '',
   }
 };

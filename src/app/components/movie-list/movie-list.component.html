@@ -1,0 +1,5 @@
+<div class="row" *ngFor="let movies of ticketMasterFeature.selectsMoviesSplitedByRow(4)">
+  <div class="col-3" *ngFor="let movie of movies">
+    <app-card [movie]="movie"></app-card>
+  </div>
+</div>

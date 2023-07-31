@@ -2,13 +2,15 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { provideState } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
-import { ticketMasterReducer } from './stores/reducers/ticket-master.reducer';
-import { ticketMasterEffect } from './stores/effects/ticket-master.effect';
+import { theMovieReducer } from './stores/reducers/the-movie.reducer';
+import { theMovieEffect } from './stores/effects/the-movie.effect';
 
 export const routes: Routes = [
   {
-  path: '',
-  component: HomeComponent,
-  providers: [provideState(ticketMasterReducer), provideEffects({ticketMasterEffect})],
-},
+    path: '',
+    component: HomeComponent,
+    providers: [
+      provideState(theMovieReducer),
+      provideEffects({ theMovieEffect })],
+  },
 ];

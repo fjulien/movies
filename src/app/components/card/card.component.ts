@@ -1,16 +1,17 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EventsEntity } from 'src/app/models/ticket-master.model';
+import { MoviesEntity } from 'src/app/models/the-movie.model';
+import { SecurePipe } from "../../pipes/src-image/src-image.pipe";
 
 @Component({
-  selector: 'app-card',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.scss']
+    selector: 'app-card',
+    standalone: true,
+    templateUrl: './card.component.html',
+    styleUrls: ['./card.component.scss'],
+    imports: [CommonModule, SecurePipe]
 })
 export class CardComponent {
 
-  @Input() event !: EventsEntity;
+  @Input() movie !: MoviesEntity;
 
 }

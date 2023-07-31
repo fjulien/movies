@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EventListComponent } from 'src/app/components/event-list/event-list.component';
+import { MovieListComponent } from 'src/app/components/movie-list/movie-list.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, EventListComponent],
+  imports: [CommonModule, MovieListComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })

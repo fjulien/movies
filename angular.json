@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "sortir-a-bordeaux": {
+    "movies": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -24,7 +24,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/sortir-a-bordeaux/browser",
+            "outputPath": "dist/movies/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -78,10 +78,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "sortir-a-bordeaux:build:production"
+              "browserTarget": "movies:build:production"
             },
             "development": {
-              "browserTarget": "sortir-a-bordeaux:build:development"
+              "browserTarget": "movies:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -89,7 +89,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "sortir-a-bordeaux:build"
+            "browserTarget": "movies:build"
           }
         },
         "test": {
@@ -115,7 +115,7 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/sortir-a-bordeaux/server",
+            "outputPath": "dist/movies/server",
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json",
             "inlineStyleLanguage": "scss"
@@ -144,12 +144,12 @@
           "builder": "@nguniversal/builders:ssr-dev-server",
           "configurations": {
             "development": {
-              "browserTarget": "sortir-a-bordeaux:build:development",
-              "serverTarget": "sortir-a-bordeaux:server:development"
+              "browserTarget": "movies:build:development",
+              "serverTarget": "movies:server:development"
             },
             "production": {
-              "browserTarget": "sortir-a-bordeaux:build:production",
-              "serverTarget": "sortir-a-bordeaux:server:production"
+              "browserTarget": "movies:build:production",
+              "serverTarget": "movies:server:production"
             }
           },
           "defaultConfiguration": "development"
@@ -163,12 +163,12 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "sortir-a-bordeaux:build:production",
-              "serverTarget": "sortir-a-bordeaux:server:production"
+              "browserTarget": "movies:build:production",
+              "serverTarget": "movies:server:production"
             },
             "development": {
-              "browserTarget": "sortir-a-bordeaux:build:development",
-              "serverTarget": "sortir-a-bordeaux:server:development"
+              "browserTarget": "movies:build:development",
+              "serverTarget": "movies:server:development"
             }
           },
           "defaultConfiguration": "production"

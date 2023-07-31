@@ -1,5 +1,5 @@
 {
-  "name": "sortir-a-bordeaux",
+  "name": "movies",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,10 +8,10 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "dev:ssr": "ng run sortir-a-bordeaux:serve-ssr",
-    "serve:ssr": "node dist/sortir-a-bordeaux/server/main.js",
-    "build:ssr": "ng build && ng run sortir-a-bordeaux:server",
-    "prerender": "ng run sortir-a-bordeaux:prerender"
+    "dev:ssr": "ng run movies:serve-ssr",
+    "serve:ssr": "node dist/movies/server/main.js",
+    "build:ssr": "ng build && ng run movies:server",
+    "prerender": "ng run movies:prerender"
   },
   "private": true,
   "dependencies": {

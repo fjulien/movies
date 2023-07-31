@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EventListComponent } from './event-list.component';
+import { MovieListComponent } from './movie-list.component';
 
-describe('EventListComponent', () => {
-  let component: EventListComponent;
-  let fixture: ComponentFixture<EventListComponent>;
+describe('MovieListComponent', () => {
+  let component: MovieListComponent;
+  let fixture: ComponentFixture<MovieListComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [EventListComponent]
+      imports: [MovieListComponent]
     });
-    fixture = TestBed.createComponent(EventListComponent);
+    fixture = TestBed.createComponent(MovieListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
