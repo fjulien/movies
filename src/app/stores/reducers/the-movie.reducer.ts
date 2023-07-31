@@ -1,13 +1,15 @@
 import { createFeature, createReducer, createSelector, on } from "@ngrx/store";
 import { theMovieActions } from "../actions/the-movie.action";
-import { MoviesEntity } from "src/app/models/the-movie.model";
+import { MovieEntity, MoviesEntity } from "src/app/models/the-movie.model";
 
 interface TheMovieReducer {
-  movies: any[]
+  movies: MoviesEntity[];
+  movie: MovieEntity | undefined;
 }
 
 const initialState: TheMovieReducer = {
-  movies: []
+  movies: [],
+  movie: undefined
 }
 
 export const theMovieReducer = createFeature({
@@ -17,6 +19,10 @@ export const theMovieReducer = createFeature({
     on(theMovieActions.setMovies, (state, action) => ({
       ...state,
       movies: action.movies,
+    })),
+    on(theMovieActions.setMovie, (state, action) => ({
+      ...state,
+      movie: action.movie,
     })),
 
   ),

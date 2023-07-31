@@ -8,13 +8,14 @@ import {
 import { environment } from '../../../environments/environment';
 
 import { Observable } from 'rxjs';
+import { MovieEntity } from 'src/app/models/the-movie.model';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
 
   constructor() {}
 
-  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+  intercept(request: HttpRequest<MovieEntity>, next: HttpHandler): Observable<HttpEvent<MovieEntity>> {
     
     request = request.clone({
       setHeaders: {

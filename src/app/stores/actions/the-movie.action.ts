@@ -5,6 +5,8 @@ export const theMovieActions = createActionGroup({
   source:'The movie',
   events:{
     getMovies: emptyProps(),
+    getMovie: props<{movieId:number}>(),
     setMovies: props<{movies:MoviesEntity[]}>(),
+    setMovie: props<{movie:any}>(),
   }
 })

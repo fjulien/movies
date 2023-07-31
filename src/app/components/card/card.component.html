@@ -1,7 +1,7 @@
 <div class="card">
-  <img class="card-img-top" [src]="'https://themoviedb.org/t/p/w500/' + movie.poster_path" [alt]="movie.title">
+  <img class="card-img-top" [src]="movie.poster_path | sourceFromTheMovie" [alt]="movie.title">
   <div class="card-body">
     <h5 class="card-title">{{movie.title}}</h5>
-    <a>Lien </a>
+    <a [routerLink]="['movie', movie.id]" >Plus de détail</a>
   </div>
 </div>

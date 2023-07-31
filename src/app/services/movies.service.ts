@@ -1,8 +1,8 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
-import { MovieUpcomingListApi } from '../models/the-movie.model';
+import { MovieEntity, MovieUpcomingListApi } from '../models/the-movie.model';
 
 
 @Injectable({
@@ -10,10 +10,14 @@ import { MovieUpcomingListApi } from '../models/the-movie.model';
 })
 export class MoviesServiceService {
   private readonly httpClient = inject(HttpClient)
-  private readonly url = `${environment.theMovie.url}/movie/upcoming`;
+  private readonly url = `${environment.theMovie.url}/movie`;
 
   getListUpcoming(): Observable<MovieUpcomingListApi> {
-    const params = new HttpParams();
-    return this.httpClient.get<MovieUpcomingListApi>(this.url);
+    return this.httpClient.get<MovieUpcomingListApi>(`${this.url}/upcoming`);
+  }
+
+  getMovie(movieId:number):Observable<MovieEntity>{
+    return this.httpClient.get<MovieUpcomingListApi>(`${this.url}/${movieId}`);
+
   }
 }

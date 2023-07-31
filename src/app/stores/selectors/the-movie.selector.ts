@@ -10,6 +10,8 @@ export function theMovieFeature() {
   return {
     getMovies: () => store.dispatch(theMovieActions.getMovies()),
     setMovies: (movies: MoviesEntity[]) => store.dispatch(theMovieActions.setMovies({ movies })),
+    getMovie: (movieId:number) => store.dispatch(theMovieActions.getMovie({movieId})),
+    setMovie: (movie: MoviesEntity) => store.dispatch(theMovieActions.setMovie({ movie })),
     selectsMoviesSplitedByRow: (size: number) => store.selectSignal(theMovieReducer.selectsMoviesSplitedByRow(size))(),
   };
 }
