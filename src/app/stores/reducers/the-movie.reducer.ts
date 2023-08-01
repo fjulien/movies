@@ -4,12 +4,12 @@ import { MovieEntity, MoviesEntity } from "src/app/models/the-movie.model";
 
 interface TheMovieReducer {
   movies: MoviesEntity[];
-  movie: MovieEntity | undefined;
+  movie: MovieEntity;
 }
 
 const initialState: TheMovieReducer = {
   movies: [],
-  movie: undefined
+  movie: {} as MovieEntity
 }
 
 export const theMovieReducer = createFeature({
@@ -25,6 +25,10 @@ export const theMovieReducer = createFeature({
       movie: action.movie,
     })),
 
+    on(theMovieActions.removeMovie, (state) => ({
+      ...state,
+      movie: {} as MovieEntity,
+    })),
   ),
   extraSelectors: ({ selectMovies }) => ({
     selectsMoviesSplitedByRow: (size: number )=> createSelector(selectMovies, (movies) => {

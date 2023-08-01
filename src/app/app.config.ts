@@ -1,5 +1,5 @@
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withComponentInputBinding } from '@angular/router';
 
 import { routes } from './app.routes';
 import { MoviesServiceService } from './services/movies.service';
@@ -10,7 +10,7 @@ import { TokenInterceptor } from './interceptors/token/token.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes),
+    provideRouter(routes, withComponentInputBinding()),
     { provide: MoviesServiceService, useClass: MoviesServiceService },
     importProvidersFrom(HttpClientModule),
     provideStore(),

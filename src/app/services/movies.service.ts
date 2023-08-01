@@ -17,7 +17,7 @@ export class MoviesServiceService {
   }
 
   getMovie(movieId:number):Observable<MovieEntity>{
-    return this.httpClient.get<MovieUpcomingListApi>(`${this.url}/${movieId}`);
+    return this.httpClient.get<MovieEntity>(`${this.url}/${movieId}`);
 
   }
 }

@@ -1,8 +1,8 @@
-import { SourceFromTheMovie } from './source-from-the-movie.pipe';
+import { SourceFromTheMoviePipe } from './source-from-the-movie.pipe';
 
 describe('source-from-the-movie', () => {
   it('create an instance', () => {
-    const pipe = new SourceFromTheMovie();
+    const pipe = new SourceFromTheMoviePipe();
     expect(pipe).toBeTruthy();
   });
 });

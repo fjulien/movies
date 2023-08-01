@@ -29,7 +29,7 @@ export const loadMovies = createEffect((actions$ = inject(Actions)) => {
       ofType(theMovieActions.getMovie),
       switchMap(({movieId}) => {
         return moviesServiceService.getMovie(movieId).pipe(
-          map(({ results }) => theMovieActions.setMovie({ movie: results || [] })),
+          map((movie) => theMovieActions.setMovie({ movie })),
           catchError((error) => {
             console.error(error);
             return of()
