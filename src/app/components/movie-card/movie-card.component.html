@@ -1,7 +1,8 @@
-<div class="card">
-  <img class="card-img-top" [src]="movie.poster_path | sourceFromTheMovie" [alt]="movie.title">
-  <div class="card-body">
-    <h5 class="card-title">{{movie.title}}</h5>
-    <a [routerLink]="['movie', movie.id]" >Plus de détail</a>
+<a [routerLink]="['movie', movie.id]">
+  <div class="card">
+    <img class="card-img-top" [src]="movie.poster_path | sourceFromTheMovie" [alt]="movie.title">
+    <div class="card-body">
+      <h5 class="card-title">{{movie.title}}</h5>
+    </div>
   </div>
-</div>
+</a>

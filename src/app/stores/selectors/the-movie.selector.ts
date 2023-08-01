@@ -14,7 +14,6 @@ export function theMovieFeature() {
     setMovie: (movie: MoviesEntity) => store.dispatch(theMovieActions.setMovie({ movie })),
     removeMovie: () => store.dispatch(theMovieActions.removeMovie()),
     selectsMoviesSplitedByRow: (size: number) => store.selectSignal(theMovieReducer.selectsMoviesSplitedByRow(size))(),
-    selectsMovie: store.select(theMovieReducer.selectMovie),
-
+    selectsMovie: store.selectSignal(theMovieReducer.selectMovie),
   };
 }
