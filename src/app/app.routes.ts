@@ -11,10 +11,15 @@ export const routes: Routes = [
     component: HomeComponent,
     providers: [
       provideState(theMovieReducer),
-      provideEffects({  loadMovies, loadMovie })],
+      provideEffects({  loadMovies })
+    ],
   },
   {
     path: 'movie/:id',
+    providers: [
+      provideState(theMovieReducer),
+      provideEffects({  loadMovie })
+    ],
     loadComponent: () => import('./pages/movie-detail/movie-detail.component').then((c) => c.MovieDetailComponent)
   }
 ];
