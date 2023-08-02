@@ -5,13 +5,15 @@
     text-align: center;
     text-shadow: 1px 1px white;
   }
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-    height: 100%;
-  }
 }
-
 
 a {
   position: relative;
+}
+
+img{
+  filter: grayscale(100%);}
+
+img:hover{
+  filter: grayscale(0%);
 }
