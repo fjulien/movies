@@ -15,5 +15,6 @@ export function theMovieFeature() {
     removeMovie: () => store.dispatch(theMovieActions.removeMovie()),
     selectsMoviesSplitedByRow: (size: number) => store.selectSignal(theMovieReducer.selectsMoviesSplitedByRow(size))(),
     selectsMovie: store.selectSignal(theMovieReducer.selectMovie),
+    postToWatchlist: (movieId: number) => store.dispatch(theMovieActions.postToWatchlist({movieId})),
   };
 }

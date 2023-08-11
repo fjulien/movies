@@ -15,7 +15,7 @@ import { ActivatedRoute } from '@angular/router';
 export class MovieDetailComponent implements OnInit, OnDestroy {
 
   movie!: Signal<MovieEntity>;
-  private readonly theMovieFeature = theMovieFeature();
+  readonly theMovieFeature = theMovieFeature();
   private readonly activeRoute = inject(ActivatedRoute)
 
   ngOnInit(): void {

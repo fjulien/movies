@@ -1,7 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      <img [src]=" movie().poster_path | sourceFromTheMovie" [alt]="movie().title " class="img-fluid" />
+      <img [src]="movie().poster_path | sourceFromTheMovie" [alt]="movie().title " class="img-fluid" />
+      <button type="button" class="btn btn-warning" (click)="theMovieFeature.postToWatchlist(movie().id)">Ajouter aux favories</button>
     </div>
     <div class="col-md-6">
       <h2>{{ movie().title }}</h2>

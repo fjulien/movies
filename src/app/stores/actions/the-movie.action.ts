@@ -9,5 +9,6 @@ export const theMovieActions = createActionGroup({
     setMovies: props<{movies:MoviesEntity[]}>(),
     setMovie: props<{movie:any}>(),
     removeMovie: emptyProps(),
+    postToWatchlist: props<{movieId:number}>(),
   }
 })
