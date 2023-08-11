@@ -43,3 +43,4 @@ Thumbs.db
 
 # Custom
 src/environments/environment.development.ts
+package-lock.json
